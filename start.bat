@@ -1,18 +1,13 @@
-npm start
-
 @echo off
-setlocal
-
-rem Définir le nom du programme à vérifier
-set PROGRAMME=Nom_du_programme
-
-rem Vérifier si le programme est déjà installé
-where %PROGRAMME% >nul 2>nul
-if %errorlevel% equ 0 (
-    echo ok
-) else (
-    echo Install en cours
-    rem Insérer ici les commandes d'installation du programme
+IF EXIST node_modules\confirmation.txt (
+    echo Node modules already installed
+    npm start
+) ELSE (
+    echo Installing node modules
+    npm install
+    type nul > node_modules\confirmation.txt
+    echo Node modules installed > node_modules\confirmation.txt
+    npm start
 )
 
-endlocal
+echo Starting server
