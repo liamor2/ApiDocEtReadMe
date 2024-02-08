@@ -63,7 +63,7 @@ export class VinsController {
     public updateVin(req: Request, res: Response, next: NextFunction): void {
         mysql.createConnection(connection)
             .then((connection) => {
-                connection.query("UPDATE vins SET nom = ?, domaine = ?, cepage = ?, couleur = ?, region = ?, annee = ?, degre_alcool = ?, description = ? WHERE id = ?", [req.body.nom,, req.body.domaine, req.body.cepage, req.body.couleur, req.body.region, req.body.annee, req.body.degre_alcool, req.body.description, req.params.id])
+                connection.query("UPDATE vins SET nom = ?, domaine = ?, cepage = ?, couleur = ?, region = ?, annee = ?, degre_alcool = ?, description = ? WHERE id = ?", [req.body.nom, req.body.domaine, req.body.cepage, req.body.couleur, req.body.region, req.body.annee, req.body.degre_alcool, req.body.description, req.params.id])
                     .then((results) => {
                         res.json({ message: "Vin modifiée" });
                     })

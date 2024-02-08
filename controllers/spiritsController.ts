@@ -63,7 +63,7 @@ export class SpiritsController {
     public updateSpirit(req: Request, res: Response, next: NextFunction): void {
         mysql.createConnection(connection)
             .then((connection) => {
-                connection.query("UPDATE spirits SET nom = ?, type = ?, marque = ?, degre_alcool = ?, pays_origine = ?, description = ? WHERE id = ?", [req.body.nom,, req.body.type, req.body.marque, req.body.degre_alcool, req.body.pays_origine, req.body.description, req.params.id])
+                connection.query("UPDATE spirits SET nom = ?, type = ?, marque = ?, degre_alcool = ?, pays_origine = ?, description = ? WHERE id = ?", [req.body.nom, req.body.type, req.body.marque, req.body.degre_alcool, req.body.pays_origine, req.body.description, req.params.id])
                     .then((results) => {
                         res.json({ message: "Spirit modifiée" });
                     })
