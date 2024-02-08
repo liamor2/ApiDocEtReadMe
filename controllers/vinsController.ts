@@ -44,7 +44,7 @@ export class VinsController {
     public createVin(req: Request, res: Response, next: NextFunction): void {
         mysql.createConnection(connection)
             .then((connection) => {
-                connection.query("INSERT INTO vins (nom, domaine, cepage, couleur, region, annee, degre_alcool, description) VALUES (?, ?, ?, ?, ?, ?, ?)", [req.body.nom, req.body.domaine, req.body.cepage,req.body.couleur, req.body.region,req.body.annee, req.body.degre_alcool, req.body.description])
+                connection.query("INSERT INTO vins (nom, domaine, cepage, couleur, region, annee, degre_alcool, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [req.body.nom, req.body.domaine, req.body.cepage,req.body.couleur, req.body.region,req.body.annee, req.body.degre_alcool, req.body.description])
                     .then((results) => {
                         res.json({ message: "Vin créée" });
                     })
@@ -237,7 +237,7 @@ export class VinsController {
  *     summary: On peut supprimer un vin
  *     description: ....
  *     tags:
- *       - name: Vin
+ *       - name: Vins
  *     parameters:
  *       - in: path
  *         name: id

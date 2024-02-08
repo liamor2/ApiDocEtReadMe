@@ -42,6 +42,7 @@ export class BieresController {
     }
 
     public createBiere(req: Request, res: Response, next: NextFunction): void {
+        console.log(req.body);
         mysql.createConnection(connection)
             .then((connection) => {
                 connection.query("INSERT INTO bieres (nom, brasserie, type, degre_alcool, pays_origine, description) VALUES (?, ?, ?, ?, ?, ?)", [req.body.nom, req.body.brasserie, req.body.type, req.body.degre_alcool, req.body.pays_origine, req.body.description])
