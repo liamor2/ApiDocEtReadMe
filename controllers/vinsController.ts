@@ -112,8 +112,7 @@ export class VinsController {
  *   get:
  *     summary: On peut obtenir la liste des vins
  *     description: ....
- *     tags:
- *       - name: Vins
+ *     tags: [Vins]
  *     responses:
  *       200:
  *         description: succès, retourne la liste des vins
@@ -124,8 +123,7 @@ export class VinsController {
  *   get:
  *     summary: On peut obtenir un vin
  *     description: ....
- *     tags:
- *       - name: Vins
+ *     tags: [Vins]
  *     parameters:
  *       - in: path
  *         name: id
@@ -143,8 +141,7 @@ export class VinsController {
  *   post:
  *     summary: On peut créer un vin
  *     description: ....
- *     tags:
- *       - name: Vins
+ *     tags: [Vins]
  *     requestBody:
  *       content:
  *         application/json:
@@ -186,8 +183,7 @@ export class VinsController {
  *   put:
  *     summary: On peut modifier un vin
  *     description: ....
- *     tags:
- *       - name: Vins
+ *     tags: [Vins]
  *     parameters:
  *       - in: path
  *         name: id
@@ -236,8 +232,7 @@ export class VinsController {
  *   delete:
  *     summary: On peut supprimer un vin
  *     description: ....
- *     tags:
- *       - name: Vins
+ *     tags: [Vins]
  *     parameters:
  *       - in: path
  *         name: id
