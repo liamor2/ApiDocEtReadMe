@@ -1,6 +1,7 @@
 import express, {NextFunction, Request, Response } from "express";
 import { BieresController } from "./controllers/bieresController";
 import { SpiritsController } from "./controllers/spiritsController";
+import { VinsController } from "./controllers/vinsController";
 import dotenv from "dotenv";
 import mysql from "mysql2/promise";
 import { AlcoolError, errorHandler } from "./midllewares/errorHandlers";
@@ -85,6 +86,31 @@ app.delete("/deleteSpirit/:id", (req: Request, res: Response, next: NextFunction
     spiritsController.deleteSpirit(req, res, next);
 });
 
+
+app.get("/vins", (req: Request, res: Response, next: NextFunction) => {
+    const vinsController = new VinsController();
+    vinsController.getAllVins(req, res, next);
+});
+
+app.get("/vin/:id", (req: Request, res: Response, next: NextFunction) => {
+    const vinsController = new VinsController();
+    vinsController.getOneVin(req, res, next);
+});
+
+app.post("/createVin", (req: Request, res: Response, next: NextFunction) => {
+    const vinsController = new VinsController();
+    vinsController.createVin(req, res, next);
+});
+
+app.put("/updateVin/:id", (req: Request, res: Response, next: NextFunction) => {
+    const vinsController = new VinsController();
+    vinsController.updateVin(req, res, next);
+});
+
+app.delete("/deleteVin/:id", (req: Request, res: Response, next: NextFunction) => {
+    const vinsController = new VinsController();
+    vinsController.deleteVin(req, res, next);
+});
 
 
 // app.use((req: Request, res: Response, next: NextFunction) => {
