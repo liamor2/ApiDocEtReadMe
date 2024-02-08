@@ -169,6 +169,7 @@ export class SpiritsController {
  *               - marque
  *               - degre_alcool
  *               - pays_origine
+ *               - description
  *     responses:
  *       200:
  *         description: succès, retourne le spirit créée
@@ -212,6 +213,7 @@ export class SpiritsController {
  *               - marque
  *               - degre_alcool
  *               - pays_origine
+ *               - description
  *     responses:
  *       200:
  *         description: succès, retourne le spirit modifiée

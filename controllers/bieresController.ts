@@ -169,6 +169,7 @@ export class BieresController {
  *               - type
  *               - degre_alcool
  *               - pays_origine
+ *               - description
  *     responses:
  *       200:
  *         description: succès, retourne la bière créée
@@ -212,6 +213,7 @@ export class BieresController {
  *               - type
  *               - degre_alcool
  *               - pays_origine
+ *               - description
  *     responses:
  *       200:
  *         description: succès, retourne la bière modifiée
