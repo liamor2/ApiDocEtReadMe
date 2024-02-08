@@ -176,7 +176,7 @@ export class SpiritsController {
  *       400:
  *         description: requête invalide, erreur lors de la création du spirit
  * 
- * /updateBiere/{id}:
+ * /updateSpirit/{id}:
  *   put:
  *     summary: On peut modifier un spirit
  *     description: ....
