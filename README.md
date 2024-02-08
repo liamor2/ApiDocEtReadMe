@@ -1,12 +1,14 @@
 # ApiDocEtReadMe
 
+![Logo](./img/Logo.png)
+
 ## Description
 Application allowing CRUD operations on an alcohol database.
 
 ## Install database
     # Installing the "Alcool" Database
 
-This guide will assist you in installing the "Alcooll" database from the provided SQL file, `alcool.sql`.
+This guide will assist you in installing the "Alcool" database from the provided SQL file, `alcool.sql`.
 
 ## Prerequisites
 
@@ -45,7 +47,7 @@ Follow these steps to install the "Alcool" database:
 4. **Import the SQL Dump:** Execute the following command to import the data from the `alcool.sql` file:
 
     ```bash
-    source path_to_alcool.sql;
+    mysql -u YOUR_USER -p alcool < path_to_alcool.sql
     ```
 
     Replace `path_to_alcool.sql` with the absolute or relative path to the `alcool.sql` file.
