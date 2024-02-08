@@ -237,7 +237,7 @@ export class VinsController {
  *     summary: On peut supprimer un vin
  *     description: ....
  *     tags:
- *       - name: Vin
+ *       - name: Vins
  *     parameters:
  *       - in: path
  *         name: id
