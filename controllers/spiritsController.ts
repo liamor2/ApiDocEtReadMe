@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import mysql from 'mysql2/promise';
 import { connection } from '../constantes/config';
 
-export class BieresController {
+export class SpiritsController {
     public getAllSpirits(req: Request, res: Response, next: NextFunction): void {
         mysql.createConnection(connection)
             .then((connection) => {
