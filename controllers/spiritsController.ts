@@ -112,8 +112,7 @@ export class SpiritsController {
  *   get:
  *     summary: On peut obtenir la liste des spirits
  *     description: ....
- *     tags:
- *       - name: Spirits
+ *     tags: [Spirits]
  *     responses:
  *       200:
  *         description: succès, retourne la liste des spirits
@@ -124,8 +123,7 @@ export class SpiritsController {
  *   get:
  *     summary: On peut obtenir un spirit
  *     description: ....
- *     tags:
- *       - name: Spirits
+ *     tags: [Spirits]
  *     parameters:
  *       - in: path
  *         name: id
@@ -143,8 +141,7 @@ export class SpiritsController {
  *   post:
  *     summary: On peut créer un spirit
  *     description: ....
- *     tags:
- *       - name: Spirits
+ *     tags: [Spirits]
  *     requestBody:
  *       content:
  *         application/json:
@@ -180,8 +177,7 @@ export class SpiritsController {
  *   put:
  *     summary: On peut modifier un spirit
  *     description: ....
- *     tags:
- *       - name: Spirits
+ *     tags: [Spirits]
  *     parameters:
  *       - in: path
  *         name: id
@@ -224,8 +220,7 @@ export class SpiritsController {
  *   delete:
  *     summary: On peut supprimer un spirit
  *     description: ....
- *     tags:
- *       - name: Spirits
+ *     tags: [Spirits]
  *     parameters:
  *       - in: path
  *         name: id

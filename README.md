@@ -55,7 +55,7 @@ Follow these steps to install the "Alcool" database:
 5. **Verify the Installation:** Once the import is complete, you can verify that the "Alcool" database has been successfully installed by examining the tables and imported data.
 
 6. **modif config.ts** Once all finish you need too modif config.ts :
-    ````
+    ```js
     export const DB_HOST = "localhost";
     export const DB_USER = "YOUR_USER";
     export const DB_PASSWORD = "YOUR_PASSWORD";
@@ -67,7 +67,7 @@ Follow these steps to install the "Alcool" database:
         password: DB_PASSWORD,
         database: DB_NAME
     };
-````
+    ```
 
 ## Installation
 

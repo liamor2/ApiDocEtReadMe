@@ -113,8 +113,7 @@ export class BieresController {
  *   get:
  *     summary: On peut obtenir la liste des bières
  *     description: ....
- *     tags:
- *       - name: Bières
+ *     tags: [Bières]
  *     responses:
  *       200:
  *         description: succès, retourne la liste des bières
@@ -125,8 +124,7 @@ export class BieresController {
  *   get:
  *     summary: On peut obtenir une bière
  *     description: ....
- *     tags:
- *       - name: Bières
+ *     tags: [Bières]
  *     parameters:
  *       - in: path
  *         name: id
@@ -144,8 +142,7 @@ export class BieresController {
  *   post:
  *     summary: On peut créer une bière
  *     description: ....
- *     tags:
- *       - name: Bières
+ *     tags: [Bières]
  *     requestBody:
  *       content:
  *         application/json:
@@ -181,8 +178,7 @@ export class BieresController {
  *   put:
  *     summary: On peut modifier une bière
  *     description: ....
- *     tags:
- *       - name: Bières
+ *     tags: [Bières]
  *     parameters:
  *       - in: path
  *         name: id
@@ -225,8 +221,7 @@ export class BieresController {
  *   delete:
  *     summary: On peut supprimer une bière
  *     description: ....
- *     tags:
- *       - name: Bières
+ *     tags: [Bières]
  *     parameters:
  *       - in: path
  *         name: id
