@@ -3,38 +3,27 @@ import { BieresController } from "./controllers/bieresController";
 import dotenv from "dotenv";
 import mysql from "mysql2/promise";
 import { AlcoolError, errorHandler } from "./midllewares/errorHandlers";
-import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER } from "./constantes/config";
+import { connection } from "./constantes/config";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUI from 'swagger-ui-express';
 import { swaggerOptions } from "./swaggerOptions";
 dotenv.config();
 
 const cors = require('cors');
-const connection = mysql.createConnection({
-    host: DB_HOST,
-    user: DB_USER,
-    password: DB_PASSWORD,
-    database: DB_NAME
-});
 
-async function testConnection() {
-    let connection;
-    try {
-        connection = await mysql.createConnection({
-            host: DB_HOST,
-            user: DB_USER,
-            password: DB_PASSWORD,
-            database: DB_NAME
-        });
-        console.log("Connexion réussie");
-    } catch (error) {
-        console.error("Erreur de connexion à la base de données", error);
-    } finally {
-        if (connection) {
+function testConnection() {
+    mysql.createConnection(connection)
+        .then((connection) => {
+            console.log("Connected to the database");
             connection.end();
-        }
-    }
+        })
+        .catch((error) => {
+            console.log("Error connecting to the database");
+            console.log(error);
+        });
 }
+
+testConnection();
 
 const app = express();
 const PORT: number = process.env.PORT ? parseInt(process.env.PORT) : 3000;
@@ -46,7 +35,27 @@ app.get("/", (req: Request, res: Response) => {
 
 app.get("/bieres", (req: Request, res: Response, next: NextFunction) => {
     const bieresController = new BieresController();
-    bieresController.getBieres(req, res, next);
+    bieresController.getAllBieres(req, res, next);
+});
+
+app.get("/biere/:id", (req: Request, res: Response, next: NextFunction) => {
+    const bieresController = new BieresController();
+    bieresController.getOneBiere(req, res, next);
+});
+
+app.post("/createBiere", (req: Request, res: Response, next: NextFunction) => {
+    const bieresController = new BieresController();
+    bieresController.createBiere(req, res, next);
+});
+
+app.put("/updateBiere/:id", (req: Request, res: Response, next: NextFunction) => {
+    const bieresController = new BieresController();
+    bieresController.updateBiere(req, res, next);
+});
+
+app.delete("/deleteBiere/:id", (req: Request, res: Response, next: NextFunction) => {
+    const bieresController = new BieresController();
+    bieresController.deleteBiere(req, res, next);
 });
 
 try {
