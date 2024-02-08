@@ -6,7 +6,7 @@
 Application allowing CRUD operations on an alcohol database.
 
 ## Install database
-    # Installing the "Alcool" Database
+Installing the "Alcool" Database
 
 This guide will assist you in installing the "Alcool" database from the provided SQL file, `alcool.sql`.
 
@@ -78,3 +78,16 @@ After installing Node.js, you can clone the repository to your computer and go t
 ## Usage
 
 To use the API, you need to run the start.bat file. This will install the necessary dependencies if needed and start the server.
+
+## API Documentation
+
+The API documentation is available at the following address: [API Documentation](http://localhost:3000/api-docs)
+
+## Authors
+
+- [Liam Gattegno](https://github.com/liamor2)
+- [Joseph Autret](https://github.com/caj0u)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
