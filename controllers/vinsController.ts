@@ -41,7 +41,7 @@ export class VinsController {
             });
     }
 
-    public createVins(req: Request, res: Response, next: NextFunction): void {
+    public createVin(req: Request, res: Response, next: NextFunction): void {
         mysql.createConnection(connection)
             .then((connection) => {
                 connection.query("INSERT INTO vins (nom, domaine, cepage, couleur, region, annee, degre_alcool, description) VALUES (?, ?, ?, ?, ?, ?)", [req.body.nom, req.body.domaine, req.body.cepage,req.body.couleur, req.body.region,req.body.annee, req.body.degre_alcool, req.body.description])
