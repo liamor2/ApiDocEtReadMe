@@ -1,5 +1,6 @@
 import express, {NextFunction, Request, Response } from "express";
 import { BieresController } from "./controllers/bieresController";
+import { SpiritsController } from "./controllers/spiritsController";
 import dotenv from "dotenv";
 import mysql from "mysql2/promise";
 import { AlcoolError, errorHandler } from "./midllewares/errorHandlers";
@@ -58,6 +59,38 @@ app.delete("/deleteBiere/:id", (req: Request, res: Response, next: NextFunction)
     bieresController.deleteBiere(req, res, next);
 });
 
+
+app.get("/spirits", (req: Request, res: Response, next: NextFunction) => {
+    const spiritsController = new SpiritsController();
+    spiritsController.getAllSpirits(req, res, next);
+});
+
+app.get("/spirit/:id", (req: Request, res: Response, next: NextFunction) => {
+    const spiritsController = new SpiritsController();
+    spiritsController.getOneSpirit(req, res, next);
+});
+
+app.post("/createSpirit", (req: Request, res: Response, next: NextFunction) => {
+    const spiritsController = new SpiritsController();
+    spiritsController.createSpirit(req, res, next);
+});
+
+app.put("/updateSpirit/:id", (req: Request, res: Response, next: NextFunction) => {
+    const spiritsController = new SpiritsController();
+    spiritsController.updateSpirit(req, res, next);
+});
+
+app.delete("/deleteSpirit/:id", (req: Request, res: Response, next: NextFunction) => {
+    const spiritsController = new SpiritsController();
+    spiritsController.deleteSpirit(req, res, next);
+});
+
+
+
+// app.use((req: Request, res: Response, next: NextFunction) => {
+//     next(new AlcoolError("Page non trouvée"));
+// });
+
 try {
     const swaggerDocs = swaggerJSDoc(swaggerOptions);
     app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
@@ -65,9 +98,9 @@ try {
     console.log(error);
 }
 
-app.use((req: Request, res: Response, next: NextFunction) => {
-    next(new AlcoolError("Page non trouvée"));
-});
+// app.use((req: Request, res: Response, next: NextFunction) => {
+//     next(new AlcoolError("Page non trouvée"));
+// });
 
 app.use(errorHandler);
 
